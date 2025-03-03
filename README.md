@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Course Generator
 
-## Getting Started
+![Screenshot (20)](https://github.com/user-attachments/assets/921f3780-e635-499b-a94d-30596f0ef6f9)
 
-First, run the development server:
+![Screenshot (23)](https://github.com/user-attachments/assets/7a52247a-76ef-4b3e-b65e-08fcd8d2d363)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Screenshot (24)](https://github.com/user-attachments/assets/e0221309-017e-4a1e-93ff-c85bd11a44ed)
+
+AI Course Generator is an AI-powered platform that dynamically generates educational courses based on user preferences. It leverages modern web technologies and AI tools to provide an interactive learning experience.
+
+## Features
+
+- **AI-Powered Course Generation**: Uses Google Generative AI to create structured courses.
+- **User Authentication**: Secure login and authentication using Clerk.
+- **Interactive UI**: Built with Tailwind CSS.
+- **Database Management**: PostgresSQL with Drizzle ORM for efficient data handling.
+- **Video Integration**: Embedded learning materials using React-YouTube.
+- **Markdown Support**: Courses rendered with React-Markdown for easy formatting.
+
+## Technologies Used
+
+- **Framework**: Next.js 14, React 18
+- **Styling**: Tailwind CSS, Emotion
+- **UI Components**: MUI, Radix UI
+- **AI Integration**: Google Generative AI - Gemini 1.5 Flash
+- **Database**: PostgresSQL
+- **Authentication**: Clerk
+- **Other Tools**: Axios, Lucide-React, UUID
+
+## Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Miran-Ahmad/ai-course-generator.git
+   cd ai-course-generator
+   ```
+
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+3. Set up environment variables (create a `.env.local` file):
+```sh
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+  CLERK_SECRET_KEY=your_clerk_secret_key
+  NEXT_PUBLIC_CLERK_SIGN_UP_URL=signup_route (/sign-up)
+  NEXT_PUBLIC_CLERK_SIGN_IN_URL=signin_route (/sign-in)  
+  NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key  
+  NEXT_PUBLIC_DB_CONNECTION_STRING=your_database_connection_string  
+  NEXT_PUBLIC_YOUTUBE_API_KEY=your_youtube_api_key  
+  NEXT_PUBLIC_HOST_NAME=your_hostname (http://localhost:3000)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Push the database schema:
+   ```sh
+   npm run db:push
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+7. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+8. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+- Sign up or log in to access or create personalized courses.
+- Select topics of interest to generate AI-powered courses.
+- View course content with video integration.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contribution
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Contributions are welcome! To contribute:
+- Fork the repository.
+- Create a feature branch.
+- Commit your changes.
+- Open a pull request.
 
-## Deploy on Vercel
+## Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For any queries, reach out to:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Saurav Mishra**
+- Email: [saurav24242424@gmail.com](mailto:saurav24242424@gmail.com)
+- GitHub: [sauravney](https://github.com/sauravney)
+
+OR
+  
+- **Md Miran Ahmad**
+- Email: [222miran222@gmail.com](mailto:222miran222@gmail.com)
+- GitHub: [Miran-Ahmad](https://github.com/Miran-Ahmad)
