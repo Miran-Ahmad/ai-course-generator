@@ -14,7 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Button } from "@/components/ui/button";
 import { db } from "@/configs/db";
-import { CourseList } from "@/configs/Schema";
+import { CourseList } from "@/configs/schema";
 import { eq } from "drizzle-orm";
 
 const EditCourseBasicInfo = ({ course, refreshData }) => {

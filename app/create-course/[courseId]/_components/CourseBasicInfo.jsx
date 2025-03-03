@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { HiOutlinePuzzlePiece } from "react-icons/hi2";
 import EditCourseBasicInfo from "./EditCourseBasicInfo";
 import { db } from "@/configs/db";
-import { CourseList } from "@/configs/Schema";
+import { CourseList } from "@/configs/schema";
 import { eq } from "drizzle-orm";
 import Link from "next/link";
 

@@ -2,7 +2,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider, GoogleOneTap } from "@clerk/nextjs";
 
-const inter = Outfit({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "AI Course Generator",
