@@ -3,6 +3,8 @@ import { FaLinkedin } from "react-icons/fa6";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { TypewriterEffectSmooth } from "../../components/ui/typewriter-effect";
+import { SignUp } from "@clerk/nextjs";
 
 const Footer = () => {
   const path = usePathname();
@@ -10,8 +12,41 @@ const Footer = () => {
     { id: 1, name: "About Us", path: "/about" },
     { id: 2, name: "Terms & Conditions", path: "/terms" },
   ];
+
+  const words = [
+    { text: "Build" },
+    { text: "\u00A0" }, // Non-breaking space
+    { text: "awesome" },
+    { text: "\u00A0" },
+    { text: "courses" },
+    { text: "\u00A0" },
+    { text: "with" },
+    { text: "\u00A0" },
+    { text: "Edvance", className: "text-blue-500 dark:text-blue-500" },
+  ];
+
   return (
-    <footer className="mt-36 bg-white dark:bg-gray-900 p-10">
+    <footer className="mt-0 bg-white dark:bg-gray-900 p-10">
+      <div>
+        <div className="flex flex-col items-center justify-center h-[40rem]  ">
+          <p className="text-neutral-600 dark:text-neutral-200 text-xs sm:text-base  ">
+            The road to freedom starts from here
+          </p>
+          <TypewriterEffectSmooth words={words} />
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-1 md:space-x-4">
+            <Link href={"/create-course"}>
+              <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
+                Create Course
+              </button>
+            </Link>
+            <Link href={"/dashboard"}>
+              <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">
+                Signup
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
       <div className="mx-auto max-w-screen-xl">
         <div className="pt-16 border-t border-gray-100 sm:flex sm:items-center sm:justify-between dark:border-gray-800">
           <ul className="flex flex-wrap justify-center gap-4 text-xs lg:justify-end">

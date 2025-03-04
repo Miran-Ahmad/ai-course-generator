@@ -10,8 +10,10 @@ export default function Home() {
       {/* header */}
       <Header />
       {/* Hero Section */}
-      <Hero />
-      <Footer />
+      <div className="mb-0">
+        <Hero />
+        <Footer />
+      </div>
     </>
   );
 }
