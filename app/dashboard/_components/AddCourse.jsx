@@ -12,12 +12,12 @@ function AddCourse() {
     UserCourseListContext
   );
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-4 md:px-6 py-6">
       <div>
-        <h2 className="text-3xl">
+        <h2 className="text-2xl md:text-3xl text-foreground">
           Hello <span className="font-bold">{user?.fullName}</span>
         </h2>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm md:text-base text-muted-foreground mt-2">
           Create new Course with AI and learn.
         </p>
       </div>

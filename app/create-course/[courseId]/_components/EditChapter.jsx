@@ -48,19 +48,22 @@ const EditChapter = ({ course, index, refreshData }) => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Edit Course Chapter's</DialogTitle>
-          <DialogDescription>
-            <div className="mt-3">
-              <label htmlFor="">Course Title</label>
+          <DialogTitle className="text-xl font-semibold">Edit Course Chapter</DialogTitle>
+          <DialogDescription className="text-muted-foreground">
+            <div className="mt-4 space-y-2">
+              <label htmlFor="chapter-title" className="text-sm font-medium text-foreground block">Chapter Title</label>
               <Input
+                id="chapter-title"
                 defaultValue={chapters[index].name}
                 onChange={(e) => setName(e?.target.value)}
+                className="text-base"
               />
             </div>
-            <div className="mt-3">
-              <label htmlFor="">Course Description</label>
+            <div className="mt-4 space-y-2">
+              <label htmlFor="chapter-description" className="text-sm font-medium text-foreground block">Chapter Description</label>
               <Textarea
-                className="h-40"
+                id="chapter-description"
+                className="h-40 text-base"
                 defaultValue={chapters[index].about}
                 onChange={(e) => setAbout(e?.target.value)}
               />

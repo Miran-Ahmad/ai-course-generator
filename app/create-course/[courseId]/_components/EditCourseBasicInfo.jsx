@@ -48,19 +48,22 @@ const EditCourseBasicInfo = ({ course, refreshData }) => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Edit Course Title & Description</DialogTitle>
-          <DialogDescription>
-            <div className="mt-3">
-              <label htmlFor="">Course Title</label>
+          <DialogTitle className="text-xl font-semibold">Edit Course Title & Description</DialogTitle>
+          <DialogDescription className="text-muted-foreground">
+            <div className="mt-4 space-y-2">
+              <label htmlFor="course-title" className="text-sm font-medium text-foreground block">Course Title</label>
               <Input
+                id="course-title"
                 defaultValue={course?.courseOutput?.course?.name}
                 onChange={(e) => setName(e?.target.value)}
+                className="text-base"
               />
             </div>
-            <div className="mt-3">
-              <label htmlFor="">Course Description</label>
+            <div className="mt-4 space-y-2">
+              <label htmlFor="course-description" className="text-sm font-medium text-foreground block">Course Description</label>
               <Textarea
-                className="h-40"
+                id="course-description"
+                className="h-40 text-base"
                 defaultValue={course?.courseOutput?.course?.description}
                 onChange={(e) => setDescription(e?.target.value)}
               />

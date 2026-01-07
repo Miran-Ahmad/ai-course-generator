@@ -42,44 +42,48 @@ const CourseBasicInfo = ({ course, refreshData, edit = true }) => {
   };
 
   return (
-    <div className="p-10 border rounded-xl shadow-sm mt-5">
-      <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
-        <div>
-          <h2 className="font-bold text-3xl">
-            {course?.courseOutput?.course?.name}{" "}
-            {edit && (
-              <EditCourseBasicInfo
-                course={course}
-                refreshData={() => refreshData(true)}
-              />
-            )}
-          </h2>
-          <p className="text-sm text-gray-400 mt-3">
-            {course?.courseOutput?.course?.description}
-          </p>
-          <h2 className="font-medium mt-2 flex gap-2 items-center text-primary">
-            {" "}
-            <HiOutlinePuzzlePiece /> {course?.category}
-          </h2>
-          {!edit &&<Link href={"/course/" + course?.courseId + "/start"}>
-            <Button className="w-full mt-5 cursor-pointer">Start</Button>
-          </Link>}
+    <div className="p-8 md:p-10 border border-border rounded-xl shadow-sm bg-card mt-5 hover:shadow-md transition-shadow">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="flex flex-col justify-between">
+          <div>
+            <h2 className="font-bold text-2xl md:text-3xl text-foreground leading-tight mb-4">
+              {course?.courseOutput?.course?.name}{" "}
+              {edit && (
+                <EditCourseBasicInfo
+                  course={course}
+                  refreshData={() => refreshData(true)}
+                />
+              )}
+            </h2>
+            <p className="text-base text-muted-foreground mt-3 leading-relaxed">
+              {course?.courseOutput?.course?.description}
+            </p>
+            <h2 className="font-medium mt-4 flex gap-2 items-center text-primary text-lg">
+              <HiOutlinePuzzlePiece className="w-5 h-5" /> {course?.category}
+            </h2>
+          </div>
+          {!edit && (
+            <Link href={"/course/" + course?.courseId + "/start"} className="mt-6">
+              <Button className="w-full md:w-auto cursor-pointer" size="lg">Start Course</Button>
+            </Link>
+          )}
         </div>
         <div>
-          <label htmlFor="upload-image">
+          <label htmlFor="upload-image" className="block">
             <Image
               src={selectedFile ? selectedFile : "/course-cover.svg"}
               width={600}
               height={300}
               alt="Course Banner"
-              className="w-ful rounded-xl h-[250px] object-cover cursor-pointer"
+              className="w-full rounded-xl h-[250px] md:h-[300px] object-cover cursor-pointer hover:opacity-90 transition-opacity border border-border"
             />
             {edit && (
               <input
                 type="file"
                 id="upload-image"
-                className="opacity-0"
+                className="hidden"
                 onChange={onFileSelected}
+                accept="image/*"
               />
             )}
           </label>

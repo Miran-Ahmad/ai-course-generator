@@ -32,9 +32,9 @@ function UserCourseList() {
   }, [user]);
 
   return (
-    <div className="mt-10">
-      <h2 className="font-medium text-xl">My AI Courses</h2>
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="mt-10 px-4 md:px-6">
+      <h2 className="font-semibold text-xl md:text-2xl text-foreground mb-6">My AI Courses</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
         {courseList?.length > 0
           ? courseList?.map((course, index) => (
               <CourseCard
@@ -46,7 +46,7 @@ function UserCourseList() {
           : [1, 2, 3, 4, 5].map((item, index) => (
               <div
                 key={index}
-                className="w-full mt-5 bg-slate-200 animate-pulse rounded-lg h-[270px]"
+                className="w-full mt-5 bg-muted animate-pulse rounded-lg h-[320px] border border-border"
               ></div>
             ))}
       </div>

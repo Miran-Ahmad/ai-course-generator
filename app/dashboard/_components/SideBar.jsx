@@ -51,24 +51,24 @@ function SideBar() {
       <hr className="my-5" />
       <ul>
         {menu.map((item, index) => (
-          <Link href={item.path}>
+          <Link key={item.id} href={item.path}>
             <div
-              className={`flex items-center gap-2 text-gray-600 cursor-pointer p-3 hover:bg-gray-100 hover:text-black rounded-lg mb-3 ${
-                item.path == path && "bg-gray-100 text-black"
+              className={`flex items-center gap-2 text-muted-foreground cursor-pointer p-3 hover:bg-muted hover:text-foreground rounded-lg mb-3 transition-colors ${
+                item.path == path && "bg-primary/10 text-primary font-medium"
               }`}
             >
               <div className="text-2xl">{item.icon}</div>
-              <h2>{item.name}</h2>
+              <h2 className="font-medium">{item.name}</h2>
             </div>
           </Link>
         ))}
       </ul>
       <div className="absolute bottom-10 w-[80%]">
         <Progress value={(userCourseList?.length / 3) * 100} />
-        <h2 className="text-sm my-2">
+        <h2 className="text-sm my-2 font-medium text-foreground">
           {userCourseList?.length} Out of 3 Courses Created
         </h2>
-        <h2 className="text-xs text-gray-500">
+        <h2 className="text-xs text-muted-foreground">
           Upgrade your plan for unlimited Courses.
         </h2>
       </div>

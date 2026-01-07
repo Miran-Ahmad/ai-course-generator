@@ -17,7 +17,7 @@ const Footer = () => {
           <ul className="flex flex-wrap justify-center gap-4 text-xs lg:justify-end">
             {menu.map((item, index) => (
               <Link href={item.path} key={item.id}>
-                <li className="text-gray-500 text-sm transition hover:opacity-75 dark:text-gray-400">
+                <li className="text-muted-foreground text-sm transition hover:text-foreground font-medium">
                   {item.name}
                 </li>
               </Link>

@@ -18,50 +18,48 @@ function SelectOption() {
     }));
   };
   return (
-    <div className="px-10 md:px-20 lg:px-44">
-      <div className="grid grid-cols-2 gap-10">
-        <div>
-          <label className="text-sm">Difficulty Level</label>
+    <div className="px-4 md:px-10 lg:px-20 xl:px-44 max-w-4xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="space-y-2">
+          <label className="text-sm md:text-base font-medium text-foreground block">Difficulty Level</label>
           <Select
             onValueChange={(value) => handleInputChange("level", value)}
             defaultValue={userCourseInput?.level}
           >
-            <SelectTrigger className="">
-              <SelectValue placeholder="Select" />
+            <SelectTrigger className="h-11 md:h-12">
+              <SelectValue placeholder="Select difficulty level" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Beginner"> Beginner</SelectItem>
+              <SelectItem value="Beginner">Beginner</SelectItem>
               <SelectItem value="Intermediate">Intermediate</SelectItem>
               <SelectItem value="Advance">Advance</SelectItem>
             </SelectContent>
           </Select>
         </div>
-        <div>
-          <label className="text-sm">Course Duration</label>
+        <div className="space-y-2">
+          <label className="text-sm md:text-base font-medium text-foreground block">Course Duration</label>
           <Select
             onValueChange={(value) => handleInputChange("duration", value)}
             defaultValue={userCourseInput?.duration}
           >
-            <SelectTrigger className="">
-              <SelectValue placeholder="Select" />
+            <SelectTrigger className="h-11 md:h-12">
+              <SelectValue placeholder="Select duration" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="1 hour">1 hour</SelectItem>
               <SelectItem value="2 hours">2 hours</SelectItem>
-              <SelectItem value="More than 3 hours">
-                More than 3 hours
-              </SelectItem>
+              <SelectItem value="More than 3 hours">More than 3 hours</SelectItem>
             </SelectContent>
           </Select>
         </div>
-        <div>
-          <label className="text-sm">Add Vedio</label>
+        <div className="space-y-2">
+          <label className="text-sm md:text-base font-medium text-foreground block">Include Video</label>
           <Select
             onValueChange={(value) => handleInputChange("displayVideo", value)}
             defaultValue={userCourseInput?.displayVideo}
           >
-            <SelectTrigger className="">
-              <SelectValue placeholder="Select" />
+            <SelectTrigger className="h-11 md:h-12">
+              <SelectValue placeholder="Select option" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="Yes">Yes</SelectItem>
@@ -69,12 +67,15 @@ function SelectOption() {
             </SelectContent>
           </Select>
         </div>
-        <div>
-          <label className="text-sm">No. of chapters</label>
+        <div className="space-y-2">
+          <label className="text-sm md:text-base font-medium text-foreground block">No. of Chapters</label>
           <Input
             onChange={(e) => handleInputChange("noOfChapter", e.target.value)}
             defaultValue={userCourseInput?.noOfChapter}
             type="number"
+            placeholder="Enter number of chapters"
+            className="h-11 md:h-12 text-base"
+            min="1"
           />
         </div>
       </div>

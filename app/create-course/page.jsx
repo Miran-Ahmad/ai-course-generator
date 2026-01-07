@@ -125,25 +125,25 @@ function CreateCourse() {
     <div>
       {/* Stepper */}
       <div>
-        <div className="flex flex-col justify-center items-center mt-10">
-          <h2 className="text-4xl text-primary font-medium">Create Course</h2>
-          <div className="flex mt-10">
+        <div className="flex flex-col justify-center items-center mt-10 px-4">
+          <h2 className="text-3xl md:text-4xl text-primary font-semibold mb-2">Create Course</h2>
+          <div className="flex mt-10 w-full max-w-3xl justify-center">
             {StepperOptions.map((item, index) => (
               <div key={item.id} className="flex items-center">
                 <div className="flex flex-col items-center w-[50px] md:w-[100px]">
                   <div
-                    className={`p-3 rounded-full text-white ${
-                      activeIndex >= index ? "bg-primary" : "bg-gray-200"
+                    className={`p-3 rounded-full text-white transition-colors ${
+                      activeIndex >= index ? "bg-primary" : "bg-muted text-muted-foreground"
                     }`}
                   >
                     {item.icon}
                   </div>
-                  <h2 className="hidden md:block md:text-sm">{item.name}</h2>
+                  <h2 className="hidden md:block md:text-sm font-medium text-foreground mt-2">{item.name}</h2>
                 </div>
                 {index != StepperOptions?.length - 1 && (
                   <div
-                    className={`h-1 w-[50px] md:w-[100px] rounded-full lg:w-[170px] bg-gray-300
-                    ${activeIndex - 1 >= index && "bg-black"}`}
+                    className={`h-1 w-[50px] md:w-[100px] rounded-full lg:w-[170px] transition-colors
+                    ${activeIndex - 1 >= index ? "bg-primary" : "bg-muted"}`}
                   ></div>
                 )}
               </div>
@@ -152,7 +152,7 @@ function CreateCourse() {
         </div>
       </div>
 
-      <div className="px-10 md:px-20 lg:px-44 mt-10">
+      <div className="px-6 md:px-10 lg:px-20 xl:px-44 mt-10 max-w-6xl mx-auto">
         {/* Component */}
         {activeIndex == 0 ? (
           <SelectCategory />
@@ -163,11 +163,12 @@ function CreateCourse() {
         )}
 
         {/* Next Previous Button */}
-        <div className="flex justify-between mt-10">
+        <div className="flex justify-between mt-10 mb-10 gap-4">
           <Button
             disabled={activeIndex == 0}
             variant="outline"
             onClick={() => setActiveIndex(activeIndex - 1)}
+            size="lg"
           >
             Previous
           </Button>
@@ -175,6 +176,7 @@ function CreateCourse() {
             <Button
               disabled={checkStatus()}
               onClick={() => setActiveIndex(activeIndex + 1)}
+              size="lg"
             >
               Next
             </Button>
@@ -183,6 +185,7 @@ function CreateCourse() {
             <Button
               disabled={checkStatus()}
               onClick={() => GenerateCourseLayout()}
+              size="lg"
             >
               Generate Course Layout
             </Button>

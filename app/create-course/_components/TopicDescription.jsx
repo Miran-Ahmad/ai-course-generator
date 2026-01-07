@@ -13,31 +13,28 @@ const TopicDescription = () => {
   };
 
   return (
-    <div className="mx-20 lg:mx-44">
-      {/* Input  Topic
-       */}
-      <div className="mt-5">
-        <label>
-          💡 Write a topic for which you want to generate a course (e.g., Python
-          Course, Yoga, etc.)
+    <div className="mx-4 md:mx-10 lg:mx-20 xl:mx-44 max-w-3xl">
+      {/* Input  Topic */}
+      <div className="mt-5 space-y-2">
+        <label className="text-base md:text-lg font-medium text-foreground block">
+          💡 Write a topic for which you want to generate a course (e.g., Python Course, Yoga, etc.)
         </label>
         <Input
-          className="h-14 text-xl"
-          placeholder={"topic"}
+          className="h-12 md:h-14 text-base md:text-lg"
+          placeholder="Enter course topic"
           defaultValue={userCourseInput?.topic}
           onChange={(e) => handleInputChange("topic", e.target.value)}
         />
       </div>
       {/* TextArea  */}
-      <div className="mt-5 ">
-        <label htmlFor="">
-          {" "}
-          🔥Tell us more About Your course , What you want to include in the
-          course(Optional)
+      <div className="mt-6 space-y-2">
+        <label htmlFor="course-description" className="text-base md:text-lg font-medium text-foreground block">
+          🔥 Tell us more about your course. What do you want to include in the course? (Optional)
         </label>
         <Textarea
-          placeholder="About your Course"
-          className="h-24 text-xl"
+          id="course-description"
+          placeholder="Describe your course..."
+          className="h-32 md:h-40 text-base md:text-lg"
           defaultValue={userCourseInput?.description}
           onChange={(e) => handleInputChange("description", e.target.value)}
         />
